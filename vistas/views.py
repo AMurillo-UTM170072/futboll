@@ -7,4 +7,6 @@ def inicio(resquest):
 
 def index (request):
     context = {'foo': 'bar'}
-    return render(None, 'index.html', context)
+    return render(None, 'base.html', context)
+def jugadores (request):
+    return render (request,'pages/jugadores.html')
