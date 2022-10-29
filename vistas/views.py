@@ -9,4 +9,6 @@ def index (request):
     context = {'foo': 'bar'}
     return render(None, 'base.html', context)
 def jugadores (request):
-    return render (request,'pages/jugadores.html')
+    return render (request,'pages/jugadores/jugadores.html')
+def infoJugadores (request):
+    return render (request,'pages/jugadores/tableInfoJugadores.html')
