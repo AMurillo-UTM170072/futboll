@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block titulo %}
+    Admin 
+{% endblock titulo %}
+
+{% block contenido %}
+<div class= "container ">
+    <div class="row content-center">
+    {% for i in dict %}
+        <div class="card" style="width: 18rem;">
+            <img src="https://www.playerone.vg/wp-content/uploads/2021/05/ReZero-kara-Hajimeru-Isekai-Seikatsu-Hyouketsu-no-Kizuna-finaliza-e1622492984100.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <p class="card-text">{{i.Nombre}}</p>
+            </div>
+        </div>
+    {% endfor %}
+        
+    </div>
+ </div>
+{% endblock contenido %}
