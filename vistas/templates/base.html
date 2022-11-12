@@ -20,12 +20,26 @@
  
 	  {# CSS Bootstrap #}
 	  {% bootstrap_css %}
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="#">Features</a>
+                <a class="nav-item nav-link" href="#">Pricing</a>
+                <a class="nav-item nav-link disabled" href="#">Disabled</a>
+                </div>
+            </div>
+        </nav>
 </head>
 <body>
     <div class="container-fluid">
         <div class="row flex-nowrap">
-            <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
-                <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+            <div class="col-2">
+                {% comment %} <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
                     <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
                         <span class="fs-5 d-none d-sm-inline">Menu</span>
                     </a>
@@ -102,12 +116,13 @@
                             <li><a class="dropdown-item" href="#">Sign out</a></li>
                         </ul>
                     </div>
-                </div>
+                </div> {% endcomment %}
             </div>
-            <div class="col py-3">
+            {% comment %} col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark {% endcomment %}
+            <div class="col-8">
                 {% block contenido %}
             
-            {% endblock contenido %}
+                {% endblock contenido %}
             </div>
         </div>
     </div>

@@ -11,10 +11,10 @@ def index (request):
     return render(None, 'base.html', context)
 def admin(request):
     cardItem = [
-        {'Nombre':'Alta de jugador'},
-        {'Nombre':'Equipos'},
-        {'Nombre':'Torneo'},
-        {'Nombre':'Arbitros'}
+        {'Nombre':'Alta de jugador',"url":"https://www.playerone.vg/wp-content/uploads/2021/05/ReZero-kara-Hajimeru-Isekai-Seikatsu-Hyouketsu-no-Kizuna-finaliza-e1622492984100.jpg","path":"infoJugadores"},
+        {'Nombre':'Equipos',"url":"https://www.playerone.vg/wp-content/uploads/2021/05/ReZero-kara-Hajimeru-Isekai-Seikatsu-Hyouketsu-no-Kizuna-finaliza-e1622492984100.jpg","path":"infoJugadores"},
+        {'Nombre':'Torneo',"url":"https://www.playerone.vg/wp-content/uploads/2021/05/ReZero-kara-Hajimeru-Isekai-Seikatsu-Hyouketsu-no-Kizuna-finaliza-e1622492984100.jpg","path":"infoJugadores"},
+        {'Nombre':'Arbitros',"url":"https://www.playerone.vg/wp-content/uploads/2021/05/ReZero-kara-Hajimeru-Isekai-Seikatsu-Hyouketsu-no-Kizuna-finaliza-e1622492984100.jpg","path":"infoJugadores"}
     ]
     return render(request,'pages/adminHome/homeAdmin.html',{'dict':cardItem})
 
