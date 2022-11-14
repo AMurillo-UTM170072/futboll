@@ -1,17 +1,19 @@
 {% extends "base.html" %}
-
+{% load static %}
+<link rel="stylesheet" href="{% static 'style.css' %}">
 {% block titulo %}
     Admin 
 {% endblock titulo %}
 
 {% block contenido %}
+{% comment %} <link rel="stylesheet" type="text/css"  href="style.css"> {% endcomment %}
     <div class="row content-center">
     {% for i in dict %}
         <div class="col-4 mt-3">
         <div class="card" style="width: 18rem;">
             <img src="{{i.url}}" class="card-img-top" alt="...">
             <div class="card-body">
-            <a href="{% url i.path %}">  <p class="card-text">{{i.Nombre}}</p></a>
+            <a href="{% url i.path %}" class="deleteAlink" >  <p class="card-text">{{i.Nombre}}</p></a>
             </div>
             </div>
         </div>
