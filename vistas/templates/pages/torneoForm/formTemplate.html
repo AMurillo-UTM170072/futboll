@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+{% block titulo %}
+    Formulario para dar de alta un torneo
+{% endblock titulo %}  
+
+{% block contenido %}
+    <form>
+      <div class="mb-3">
+        <div class="row">
+        <label class="form-label">Nombre del torneo</label>
+          <input type="text"  class="form-control"> 
+        </div>
+      </div>
+      <button type="button" class="btn btn-primary">Submit</button>
+    </form>
+{% endblock contenido %}
