@@ -22,3 +22,5 @@ def jugadores (request):
     return render (request,'pages/jugadores/jugadores.html')
 def infoJugadores (request):
     return render (request,'pages/jugadores/tableInfoJugadores.html')
+def registro(request):
+    return render(request,"pages/torneoForm/formTemplate.html")

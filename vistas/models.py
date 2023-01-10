@@ -1,25 +1,7 @@
 from django.db import models
 
 # Create your models here.
-"""class Rol(models.Model):
-    Rol = models.CharField(max_length=200)
-    Descripcion = models.CharField(max_length=200)
-    def __str__(self):
-        return "%s rol" % self.name
 
- class Users(models.Model):
-    rol = models.OneToOneField(
-        Rol,
-        on_delete=models.CASCADE,
-        primary_key=True,
-    )
-    Nombre = models.CharField(max_length=200,default=False)
-    ApellidoPaterno = models.CharField(max_length=200,default=False)
-    ApellidoPaterno = models.CharField(max_length=200,default=False)
-    Curp = models.CharField(max_length=200,default=False)
-    def __str__(self): 
-        return "%s Users" % self.name
-"""
 class Rol(models.Model):
     Rol = models.CharField(max_length=50,default=False)
     Descripcion = models.CharField(max_length=100,default=False)
