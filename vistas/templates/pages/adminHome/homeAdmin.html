@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+{% comment %} <link rel="stylesheet" href="{% static 'style.css' %}"> {% endcomment %}
+
+{% block titulo %}
+    Admin 
+{% endblock titulo %}
+
+{% block contenido %}
+{% comment %} <link rel="stylesheet" type="text/css"  href="style.css"> {% endcomment %}
+    <div class="adminHome row content-center">
+    {% for i in dict %}
+        <div class="col-6 mt-3">
+            <div class="card" >
+                <img src="{{i.url}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <a href="{% url i.path %}" class="deleteAlink" >  <p class="card-text text-center">{{i.Nombre}}</p></a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+{% endblock contenido %}
