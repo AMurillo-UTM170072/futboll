@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import Template,Context
+from .forms import Liguilla
 import os 
 # Create your views here.import os
 def inicio(resquest):
@@ -23,4 +24,5 @@ def jugadores (request):
 def infoJugadores (request):
     return render (request,'pages/jugadores/tableInfoJugadores.html')
 def registro(request):
-    return render(request,"pages/torneoForm/formTemplate.html")
+    formulario = Liguilla(request.POST or None)
+    return render(request,"pages/torneoForm/formTemplate.html",{"formulario":formulario})

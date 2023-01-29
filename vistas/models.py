@@ -38,12 +38,13 @@ class Users(models.Model):
 
 class Torneo(models.Model):
     torneo_id = models.AutoField(primary_key=True)
+    nombre = models.CharField(max_length=100)
     descripcion = models.CharField(max_length=100)
-    type = models.IntegerField()
-    Equipo = models.ManyToManyField(Equipo)
+    tipo_de_torneo = models.IntegerField()
 
     def __str__(self):
-        return self.headline
+        torneo = (self.descripcion,self.tipo )
+        return torneo
 
 class Campos(models.Model):
     campo_id = models.AutoField(primary_key=True)
@@ -98,5 +99,5 @@ class liguilla(models.Model):
     puntos = models.IntegerField()
     type_torneo = models.IntegerField()
     id_torneo = models.ForeignKey(Torneo, on_delete=models.CASCADE,related_name="id_torneo")
-
-    
+    def __str__(self):
+        return self
