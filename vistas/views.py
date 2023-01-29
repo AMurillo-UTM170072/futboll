@@ -25,4 +25,6 @@ def infoJugadores (request):
     return render (request,'pages/jugadores/tableInfoJugadores.html')
 def registro(request):
     formulario = Liguilla(request.POST or None)
+    if formulario.is_valid():
+        formulario.save()
     return render(request,"pages/torneoForm/formTemplate.html",{"formulario":formulario})
