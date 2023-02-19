@@ -24,10 +24,11 @@
               placeholder="{{field.label}}"
             />
           {% else %}
-            {{field}}
-            {% comment %} <select class="form-control" >
-              <option value=" {{field}}" >  </option>
-            </select> {% endcomment %}
+          {{field}}
+           {% comment %}  <select class="form-control" >
+              <option value="{{field}}">
+              </option> {% endcomment %}
+            </select>
           {% endif %}
           </div>
         </div>

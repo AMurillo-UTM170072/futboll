@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import Template,Context
 from .forms import Liguilla
+from .models import Torneo
 import os 
 # Create your views here.import os
 def inicio(resquest):
@@ -10,20 +11,27 @@ def inicio(resquest):
 def index (request):
     context = {'foo': 'bar'}
     return render(None, 'base.html', context)
-def admin(request):
+def adminJournament(request):
     cardItem = [
         {'Nombre':'Alta de jugador',"url":"https://www.playerone.vg/wp-content/uploads/2021/05/ReZero-kara-Hajimeru-Isekai-Seikatsu-Hyouketsu-no-Kizuna-finaliza-e1622492984100.jpg","path":"infoJugadores"},
         {'Nombre':'Equipos',"url":"https://www.playerone.vg/wp-content/uploads/2021/05/ReZero-kara-Hajimeru-Isekai-Seikatsu-Hyouketsu-no-Kizuna-finaliza-e1622492984100.jpg","path":"infoJugadores"},
-        {'Nombre':'Torneo',"url":"https://www.playerone.vg/wp-content/uploads/2021/05/ReZero-kara-Hajimeru-Isekai-Seikatsu-Hyouketsu-no-Kizuna-finaliza-e1622492984100.jpg","path":"infoJugadores"},
+        {'Nombre':'Torneo',"url":"https://www.playerone.vg/wp-content/uploads/2021/05/ReZero-kara-Hajimeru-Isekai-Seikatsu-Hyouketsu-no-Kizuna-finaliza-e1622492984100.jpg","path":"directivoTorneo"},
         {'Nombre':'Arbitros',"url":"https://www.playerone.vg/wp-content/uploads/2021/05/ReZero-kara-Hajimeru-Isekai-Seikatsu-Hyouketsu-no-Kizuna-finaliza-e1622492984100.jpg","path":"infoJugadores"}
     ]
     return render(request,'pages/adminHome/homeAdmin.html',{'dict':cardItem})
-
+def getJournament (request):
+    tournament = Torneo.objects.all()
+    print('inicio de torneo',tournament)
+    return render(request,'pages/adminHome/adminTableTorneos.html',{'tournament':tournament} )
+def navegarOtro(request):
+    return render('pages/adminHome/homeAdmin.html',{'dict':cardItem})
 def jugadores (request):
     return render (request,'pages/jugadores/jugadores.html')
 def infoJugadores (request):
     return render (request,'pages/jugadores/tableInfoJugadores.html')
-def registro(request):
+def alta (request):
+    return render (request,'pages/jugadores/tableInfoJugadores.html')
+def altaTorneo(request):
     formulario = Liguilla(request.POST or None)
     if formulario.is_valid():
         formulario.save()

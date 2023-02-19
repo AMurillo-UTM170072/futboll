@@ -41,12 +41,8 @@ class Torneo(models.Model):
     torneo_id = models.AutoField(primary_key=True)
     nombre = models.CharField(max_length=100)
     descripcion = models.CharField(max_length=100)
-    tipo_de_torneo = models.IntegerField(choices=THEME_CHOICES, unique=True)
-
-    def __str__(self):
-        torneo = (self.descripcion,self.tipo )
-        return torneo
-
+    tipo_de_torneo = models.IntegerField(choices=THEME_CHOICES)
+    
 class Campos(models.Model):
     campo_id = models.AutoField(primary_key=True)
     nombre_campo = models.CharField(max_length=100)

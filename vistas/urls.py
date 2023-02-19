@@ -4,7 +4,9 @@ from . import views
 urlpatterns = [
     path('', views.index, name='index'),
     path ('jugadores',views.jugadores ,name='jugadores'),
-    path ('directivo',views.admin  ,name='adminHome'),
+    path ('directivo',views.adminJournament  ,name='adminHome'),
+    path ('directivo/Torneos',views.getJournament ,name='directivoTorneo'),
     path ('jugadores/infoJugador',views.infoJugadores ,name='infoJugadores'),
-    path ('juagores/torneoAlta',views.registro,name="registroTorneo")
+    path ('directivo/torneoAlta',views.altaTorneo ,name='altaTorneo'),
+    path ('directivo/torneoAlta',views.altaTorneo,name="altaTorneo")
 ]
