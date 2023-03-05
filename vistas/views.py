@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import Template,Context
-from .forms import Liguilla
+from .forms import Liguilla,Equipos
 from .models import Torneo
 import os 
 cardItem = [
@@ -31,7 +31,10 @@ def infoJugadores (request):
 def infoEquipo (request):
     return render (request,'pages/Equipos/tableInfoEquipos.html')
 def altaEquipo (request):
-    return render (request,'pages/Equipos/tableInfoEquipos.html')
+    formularioEquipo  =  Equipos(request.POST or None)
+    if formularioEquipo.is_valid():
+        formularioEquipo.save()
+    return render (request,'pages/Equipos/insertTeams.html',{"formulario":formularioEquipo})
 def alta (request):
     return render (request,'pages/jugadores/tableInfoJugadores.html')
 def altaTorneo(request):

@@ -10,11 +10,9 @@ class Rol(models.Model):
         return "%s the place" % self.name
 
 class Equipo(models.Model):
+    equipo_id = models.AutoField(primary_key=True)
     nombre_equipo = models.CharField(max_length=50,default=False)
-    media = models.CharField(max_length=100,default=False)
-
-    def __str__(self):
-        return "%s the equipo" % self.name
+    participantes = models.IntegerField()
         
 class Users(models.Model):
     user_id = models.AutoField(primary_key=True)
@@ -51,13 +49,6 @@ class Campos(models.Model):
     def __str__(self):
         return "%s %s" % (self.first_name, self.last_name)
         
-class Campos(models.Model):
-    campo_id = models.AutoField(primary_key=True)
-    nombre_campo = models.CharField(max_length=100)
-    url = models.CharField(max_length=500)
-
-    def __str__(self):
-        return "%s %s" % (self.first_name, self.last_name)
 
 class Partidos(models.Model):
     id_partido = models.AutoField(primary_key=True)

@@ -6,26 +6,27 @@
 
 {% block contenido %}
  <div class= "container mt-5">
-    <form>
-        <div class="input-group mb-3">
-            <label class="input-group-text" for="inputGroupFile01">Upload</label>
-            <input type="file" class="form-control" id="inputGroupFile01">
-            </div>
-
-            <div class="input-group mb-3">
-            <input type="file" class="form-control" id="inputGroupFile02">
-            <label class="input-group-text" for="inputGroupFile02">Upload</label>
-            </div>
-
-            <div class="input-group mb-3">
-            <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon03">Button</button>
-            <input type="file" class="form-control" id="inputGroupFile03" aria-describedby="inputGroupFileAddon03" aria-label="Upload">
-            </div>
-
-            <div class="input-group">
-            <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
-            <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04">Button</button>
+    <form enctype="multipart/form-data"  method="post" >
+    {% csrf_token %}
+    {% for field in formulario  %}
+      <div class="mb-3" >
+        <div class="row">
+          <div class="col-4">
+            <label> {{field.label}} </label>
+          </div>
+          <div class="col-8">
+            <input 
+              type="{{field.field.widget.input_type}} "
+              class="form-control"
+              name="{{field.name}}"
+              placeholder="{{field.label}}"
+            />
+          </div>
         </div>
-    </form>
+      </div>
+      <div class="errorIdentificator" >{{field.errors}}</div>
+    {% endfor %}
+    <input  class="btn btn-success" type="submit" value="Subir torneo" >
+  </form>
  </div>
 {% endblock contenido %}
