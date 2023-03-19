@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+{% comment %} <link rel="stylesheet" href="{% static 'style.css' %}"> {% endcomment %}
+
+{% block titulo %}
+    Tabla de Torneos
+{% endblock titulo %}
+{% block contenido %}
+    <div class="adminHome row content-center">
+    <div  class="row">
+        <div class="col-10">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Nombre del torneo</th>
+                        <th scope="col">descripcion del torneo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    {% for torneo in tournament  %}
+                        <td>{{torneo.nombre}}</td>
+                        <td>{{torneo.descripcion}}</td>
+                    {% endfor %}
+                        
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-2">
+            <button class="btn btn-primary"><a class="nav-item nav-link" href="/directivo/torneoAlta" style="color: white;">+</a></button>
+        </div>    
+    </div >
+            
+    </div>
+{% endblock contenido %}

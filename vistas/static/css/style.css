@@ -1,0 +1,11 @@
+.deleteAlink{
+    color:black;
+    text-decoration: none;
+}
+.deleteAlink:hover{
+    color: black;
+    text-decoration: none;
+}
+.errorIdentificator{
+    color:  red;
+}
