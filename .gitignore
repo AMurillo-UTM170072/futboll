@@ -1,2 +1,3 @@
 vistas/__pycache__
-#vistas/migrations
+vistas/migrations
+__pycache__
