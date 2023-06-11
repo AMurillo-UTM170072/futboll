@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import Template,Context
 from .forms import Liguilla,Equipos
-from django.contrib.auth.decorators import login_required
+''' from django.contrib.auth.decorators import login_required '''
 from .models import Torneo
 import os 
 cardItem = [
@@ -14,8 +14,6 @@ cardItem = [
 # Create your views here.import os
 def inicio(resquest):
     return HttpResponse("<h1>Liga de futboll</h1>")
-
-@login_required(login_url='accounts/')
 def index (request):
     context = {'foo': 'bar'}
     return render(None, 'base.html', context)
