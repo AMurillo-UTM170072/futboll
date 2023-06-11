@@ -12,12 +12,10 @@ cardItem = [
     {'Nombre':'Arbitros',"url":"https://www.playerone.vg/wp-content/uploads/2021/05/ReZero-kara-Hajimeru-Isekai-Seikatsu-Hyouketsu-no-Kizuna-finaliza-e1622492984100.jpg","path":"infoJugadores"}
 ]
 # Create your views here.import os
-@login_required(login_url='/login/')
-def login(request):
-    return render('pages/registration/login.html')
 def inicio(resquest):
     return HttpResponse("<h1>Liga de futboll</h1>")
 
+@login_required(login_url='accounts/')
 def index (request):
     context = {'foo': 'bar'}
     return render(None, 'base.html', context)

@@ -10,5 +10,5 @@ urlpatterns = [
     path ('jugadores/infoJugador',views.infoJugadores ,name='infoJugadores'),
     path ('directivo/equipoAlta',views.altaEquipo ,name='altaEquipo'),
     path ('directivo/torneoAlta',views.altaTorneo ,name='altaTorneo'),
-    path ('jugadores/jugadorAlta',views.altaJugador,name="altaJugador")
+    path ('jugadores/jugadorAlta',views.altaJugador,name="altaJugador"),
 ]
